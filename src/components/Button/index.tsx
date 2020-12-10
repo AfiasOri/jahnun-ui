@@ -5,7 +5,7 @@ export type ButtonProps = {
   children: any
   onClick?: () => void
   color?: string
-  size?: 'small' | 'normal' | 'large'
+  size?: 'small' | 'normal' | 'large' | 'huge'
   type?: 'submit' | 'button' | 'reset'
   disabled?: boolean
   dataTestId?: string
