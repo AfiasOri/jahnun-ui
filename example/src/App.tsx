@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ExampleComponent } from 'jahnun-ui'
+import { Button } from 'jahnun-ui'
 import 'jahnun-ui/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <div style={{ textAlign: 'center', margin: '15px 0' }}>
+      <Button disabled size='small' onClick={() => console.log('asd')}>
+        Create React Library Example
+      </Button>
+    </div>
+  )
 }
 
 export default App
