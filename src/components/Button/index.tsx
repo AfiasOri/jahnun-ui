@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import StyledButton from './button.style'
 
 export type ButtonProps = {
@@ -8,6 +9,7 @@ export type ButtonProps = {
   size?: 'small' | 'normal' | 'large' | 'huge'
   type?: 'submit' | 'button' | 'reset'
   disabled?: boolean
+  className?: string
   dataTestId?: string
 }
 
@@ -18,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'submit',
   color = '',
   size = 'normal',
+  className = '',
   dataTestId = 'button'
 }) => {
   const handleClick = () => {
@@ -28,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     color,
     size,
     type,
+    className,
     onClick: handleClick,
     disabled,
     'data-testid': dataTestId

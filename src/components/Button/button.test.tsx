@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render, cleanup } from '@testing-library/react'
 
 import Button, { ButtonProps } from '.'
 
@@ -16,6 +16,8 @@ describe('Button', () => {
       dataTestId: 'button'
     }
   })
+
+  afterEach(cleanup)
 
   describe('actions', () => {
     it('triggers the callback when clicked', () => {
@@ -35,6 +37,14 @@ describe('Button', () => {
       fireEvent.click(button)
 
       expect(props.onClick).toHaveBeenCalledTimes(0)
+    })
+  })
+
+  describe('render', () => {
+    it('renders the button', () => {
+      const { getByTestId, queryByText } = render(<Button {...props} />)
+      expect(getByTestId('button'))
+      expect(queryByText('I am a button'))
     })
   })
 })
