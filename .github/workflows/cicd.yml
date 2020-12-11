@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test build publish:
+  name: test build publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
